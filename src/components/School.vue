@@ -30,6 +30,9 @@ export default {
         this.$bus.$on('getMessage',(...data)=>{
             console.log('我是School组件，收到了数据',data)
         })
+    },
+    beforeDestroy() {
+        this.$bus.$off('getMessage') //解绑自定义事件
     }
 }
 </script>
