@@ -24,6 +24,12 @@ export default {
         sendSchoolName(){
             this.getSchoolName(this.name)
         }
+    },
+    mounted(){
+        console.log('School',this.$bus)
+        this.$bus.$on('getMessage',(...data)=>{
+            console.log('我是School组件，收到了数据',data)
+        })
     }
 }
 </script>

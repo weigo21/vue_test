@@ -5,6 +5,7 @@
         <h2>学校年龄:{{myAge}}</h2>
         <button @click="updateAge">修改年龄</button>
         <button @click="sendStudentName">把学生名给app</button>
+        <button @click="sendStudentName2">把学生名给School</button>
     </div>
 </template>
 
@@ -23,6 +24,9 @@ export default {
         },
         sendStudentName() {
             this.$emit('diyevent',this.name,this.myAge)
+        },
+        sendStudentName2() {
+            this.$bus.$emit('getMessage',this.name,this.myAge)
         }
     },
     //简单声明接收
@@ -43,6 +47,9 @@ export default {
             type:Number,
             default:99
         }
+    },
+    mounted(){
+        console.log('Student',this.$bus)
     }
 }
 </script>
