@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js'
 export default {
     name:'Student',
     data() {
@@ -27,6 +28,7 @@ export default {
         },
         sendStudentName2() {
             this.$bus.$emit('getMessage',this.name,this.myAge)
+            pubsub.publish('message',666)
         }
     },
     //简单声明接收

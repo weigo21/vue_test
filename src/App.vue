@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>{{msg}}</h1>
+    <h1>{{msg}} {{schoolName}} {{studentName}}</h1>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- 通过父组件给子组件传递函数类型的props实现：子给父传递数据 -->
     <school :getSchoolName='getSchoolName'/>
@@ -21,7 +21,9 @@ export default {
   name: 'App',
   data() {
     return {
-      msg:'你好啊！'
+      msg:'你好啊！',
+      schoolName:'',
+      studentName:'',
     }
   },
   components: {
@@ -30,9 +32,11 @@ export default {
   },
   methods: {
     getSchoolName(name){
+      this.schoolName = name
       console.log('App收到学校名',name)
     },
     getStudentName(name,...params){
+      this.studentName = name
       console.log('App收到学生名',name,params)
     }
   },

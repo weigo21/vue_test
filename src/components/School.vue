@@ -8,7 +8,8 @@
 </template>
 
 <script>
-export default {
+    import pubsub from 'pubsub-js'
+    export default {
     name:'School',
     props:['getSchoolName'],
     data(){
@@ -26,13 +27,20 @@ export default {
         }
     },
     mounted(){
-        console.log('School',this.$bus)
+        //console.log('School',this.$bus)
+        //全局事件获取
         this.$bus.$on('getMessage',(...data)=>{
             console.log('我是School组件，收到了数据',data)
+        })
+        //订阅消息
+        this.pubId = pubsub.subscribe('message',(msgName,data)=>{
+            //console.log(this)
+            console.log('有人发布消息，消息的回调执行了',data)
         })
     },
     beforeDestroy() {
         this.$bus.$off('getMessage') //解绑自定义事件
+        pubsub.unsubscribe(this.pubId)
     }
 }
 </script>
