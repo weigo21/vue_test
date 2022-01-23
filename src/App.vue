@@ -10,11 +10,17 @@
 
     <!-- 通过父组件给子组件绑定一个自定义事件来实现：子给父传递数据 （第二种：使用ref）-->
     <student name="李四" :age="18" ref="student"/>
+    <div class="container">
+      <Search/>
+      <List/>
+  </div>
   </div>
 </template>
 
 <script>
 import School from './components/School.vue'
+import Search from './components/Search.vue'
+import List from './components/List.vue'
 import Student from './components/Student.vue'
 
 export default {
@@ -28,7 +34,9 @@ export default {
   },
   components: {
     School,
-    Student
+    Student,
+    Search,
+    List
   },
   methods: {
     getSchoolName(name){
@@ -56,5 +64,30 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
   background-color: cornflowerblue;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 1px solid #efefef;
+  text-align: center;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+  border-radius: 100px;
+}
+
+.card-text {
+  font-size: 85%;
 }
 </style>
