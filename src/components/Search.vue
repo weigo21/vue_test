@@ -26,7 +26,7 @@ export default {
             axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
                 response => {
                     // console.log('qingqiu chenggong',response.data.items)
-                    this.$bus.$emit('getListData',{isLoading:true,errMsg:'',users:response.data.items})
+                    this.$bus.$emit('getListData',{isLoading:false,errMsg:'',users:response.data.items})
                 },
                 error => {
                     this.$bus.$emit('getListData',{isLoading:false,errMsg:error.message,users:[]})
