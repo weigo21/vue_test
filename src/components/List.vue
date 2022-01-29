@@ -9,7 +9,7 @@
       <!-- 展示欢迎词 -->
       <h1 v-show="info.isFirst">欢迎使用！</h1>
       <!-- 展示加载中 -->
-      <h1 v-show="info.isLoading">加载中</h1>
+      <h1 v-show="info.isLoading"><img style="width:100px" src="../assets/mona-loading-default.gif"></h1>
       <!-- 展示错误信息 -->
       <h1 v-show="info.errMsg">{{info.errMsg}}</h1>
     </div>
