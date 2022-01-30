@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+//准备actions--用于响应组件中的动作
 const actions = {
   /* 如果没有业务逻辑，可以直接调用mutations
   increment : function(context,value){
@@ -26,10 +27,21 @@ const actions = {
   }
 }
 
+//准备state--用于存储数据
+const state = {
+  count:0
+}
+
+//准备getter--用于将state中的数据进行加工
+const getters = {
+  bigSum(state){
+    return state.count*10
+  }
+}
+
+//创建store
 const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
+  state: state,
   //执行层，不要写业务逻辑，业务逻辑actions里写
   mutations: {
     INCREMENT (state,value) {
@@ -40,6 +52,8 @@ const store = new Vuex.Store({
     }
   },
   actions:actions,
+  getters:getters
 })
 
+//暴露store
 export default store
