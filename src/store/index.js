@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const actions = {
+  /* 如果没有业务逻辑，可以直接调用mutations
   increment : function(context,value){
     console.log("increment bei diaoyong le",context,value)
     context.commit('INCREMENT',value)
@@ -12,6 +13,7 @@ const actions = {
     console.log("decrement bei diaoyong le",context,value)
     context.commit('DECREMENT',value)
   },
+  */
   incrementOdd : function(context,value){
     if(context.state.count % 2){
       context.commit('INCREMENT',value)
