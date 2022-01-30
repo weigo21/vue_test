@@ -10,6 +10,7 @@
 
     <!-- 通过父组件给子组件绑定一个自定义事件来实现：子给父传递数据 （第二种：使用ref）-->
     <student name="李四" :age="18" ref="student"/>
+    <Count/>
     <div class="container">
       <Search/>
       <List/>
@@ -22,6 +23,7 @@ import School from './components/School.vue'
 import Search from './components/Search.vue'
 import List from './components/List.vue'
 import Student from './components/Student.vue'
+import Count from './components/Count.vue'
 
 export default {
   name: 'App',
@@ -36,7 +38,8 @@ export default {
     School,
     Student,
     Search,
-    List
+    List,
+    Count,
   },
   methods: {
     getSchoolName(name){
