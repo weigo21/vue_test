@@ -3,6 +3,7 @@
       <h1>当前的求和为：{{count}}</h1>
       <h1>当前的求和的10倍为：{{bigSum}}</h1>
       <h1>学校{{school}},专业{{subject}}</h1>
+      <h3>Person组件的总人数：{{personList.length}}</h3>
       <select v-model.number="n">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -42,7 +43,7 @@ export default {
         ...mapActions(['incrementOdd','incrementWait'])
     },
     computed:{
-        ...mapState(['count','school','subject']),
+        ...mapState(['count','school','subject','personList']),
         ...mapGetters(['bigSum'])
     },
     mounted() {

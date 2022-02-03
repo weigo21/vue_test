@@ -31,7 +31,10 @@ const actions = {
 const state = {
   count:0,
   school:'bestv',
-  subject:'qianduan'
+  subject:'qianduan',
+  personList:[
+    {id:'001',name:'张三'}
+  ],
 }
 
 //准备getter--用于将state中的数据进行加工
@@ -51,6 +54,9 @@ const store = new Vuex.Store({
     },
     DECREMENT (state,value) {
       state.count-=value
+    },
+    ADD_PERSON (state,value) {
+      state.personList.unshift(value)
     }
   },
   actions:actions,
