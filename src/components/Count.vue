@@ -8,15 +8,15 @@
           <option value="2">2</option>
           <option value="3">3</option>
       </select>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
+      <button @click="INCREMENT(n)">+</button>
+      <button @click="DECREMENT(n)">-</button>
       <button @click="incrementOdd">当前求和为奇数再加</button>
       <button @click="incrementWait">等等再加</button>
   </div>
 </template>
 
 <script>
-import {mapState,mapGetters} from 'vuex'
+import {mapState,mapGetters,mapMutations} from 'vuex'
 export default {
     name:'Count',
     data() {
@@ -25,12 +25,14 @@ export default {
         }
     },
     methods:{
-        increment(){
-            this.$store.commit('INCREMENT',this.n)
-        },
-        decrement(){
-            this.$store.commit('DECREMENT',this.n)
-        },
+        // increment(){
+        //     this.$store.commit('INCREMENT',this.n)
+        // },
+        // decrement(){
+        //     this.$store.commit('DECREMENT',this.n)
+        // },
+        ...mapMutations(['INCREMENT','DECREMENT']),
+        /* ******************************** */
         incrementOdd(){
             this.$store.dispatch('incrementOdd',this.n)
         },
