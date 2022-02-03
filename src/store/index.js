@@ -29,7 +29,9 @@ const actions = {
 
 //准备state--用于存储数据
 const state = {
-  count:0
+  count:0,
+  school:'bestv',
+  subject:'qianduan'
 }
 
 //准备getter--用于将state中的数据进行加工

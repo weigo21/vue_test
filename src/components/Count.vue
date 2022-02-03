@@ -1,7 +1,8 @@
 <template>
   <div>
-      <h1>当前的求和为：{{$store.state.count}}</h1>
+      <h1>当前的求和为：{{count}}</h1>
       <h1>当前的求和的10倍为：{{$store.getters.bigSum}}</h1>
+      <h1>学校{{school}},专业{{subject}}</h1>
       <select v-model.number="n">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
     name:'Count',
     data() {
@@ -35,6 +37,9 @@ export default {
         incrementWait(){
             this.$store.dispatch('incrementWait',this.n)
         }
+    },
+    computed:{
+        ...mapState(['count','school','subject'])
     },
     mounted() {
         console.log('Count',this)
