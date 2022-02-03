@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>当前的求和为：{{count}}</h1>
-      <h1>当前的求和的10倍为：{{$store.getters.bigSum}}</h1>
+      <h1>当前的求和的10倍为：{{bigSum}}</h1>
       <h1>学校{{school}},专业{{subject}}</h1>
       <select v-model.number="n">
           <option value="1">1</option>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState,mapGetters} from 'vuex'
 export default {
     name:'Count',
     data() {
@@ -39,7 +39,8 @@ export default {
         }
     },
     computed:{
-        ...mapState(['count','school','subject'])
+        ...mapState(['count','school','subject']),
+        ...mapGetters(['bigSum'])
     },
     mounted() {
         console.log('Count',this)
