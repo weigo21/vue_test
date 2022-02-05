@@ -51,7 +51,7 @@ export default {
         }
     },
     mounted(){
-        console.log('Student',this.$bus)
+        //console.log('Student',this.$bus)
     }
 }
 </script>

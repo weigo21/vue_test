@@ -47,7 +47,7 @@ export default {
         ...mapGetters(['bigSum'])
     },
     mounted() {
-        console.log('Count',this)
+        //console.log('Count',this)
     }
 }
 </script>
