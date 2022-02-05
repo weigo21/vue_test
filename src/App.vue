@@ -1,5 +1,26 @@
 <template>
   <div id="app">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="page-header"><h2>Vue Router Demo</h2></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <router-link class="list-group-item" active-class="active" to="/About">About</router-link>
+          <router-link class="list-group-item" active-class="active" to="/Home">Home</router-link>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+            <!-- 指定组件呈现的位置 -->
+            <router-view></router-view>
+          </div>
+        </div>
+      </div>
+    </div>
     <h1>{{msg}} {{schoolName}} {{studentName}}</h1>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- 通过父组件给子组件传递函数类型的props实现：子给父传递数据 -->
