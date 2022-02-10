@@ -2,12 +2,21 @@
     <div>
         <ul>
             <li v-for="message in messageList" :key="message.id">
-                <!-- 挑转路由并携带query参数，to的字符串写法 -->
+                <!-- 跳转路由并携带query参数，to的字符串写法 -->
                 <!-- <router-link :to="`/home/message/detail?id=${message.id}&title=${message.title}`">{{message.title}}</router-link> -->
-                <!--挑转路由并携带query参数，to的对象写法-->
+                <!-- 跳转路由并携带query参数，to的对象写法-->
+                <!-- <router-link :to="{
+                    path:'/home/message/detail',
+                    query:{
+                        id:message.id,
+                        title:message.title
+                    }
+                }">
+                {{message.title}}
+                </router-link> -->
                 <router-link :to="{
                     name:'detail',
-                    query:{
+                    params:{
                         id:message.id,
                         title:message.title
                     }
